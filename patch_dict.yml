@@ -1,0 +1,14 @@
+--
+25437795: -> patch_id (it's in the name of the file you download from Oracle)
+   patch_proactive_bp_id -> patch proactive bundle patch id (if it's bundle patch)
+   patch_gi_id: -> GI patch ID. If it's GI only, the "patch_gi_id" has the same value as "patch_id"
+   patch_db_id -> DB patch ID
+   patch_ocw_id -> OCW patch ID (applicable if the patch is COMBO patch)
+   patch_ojvm_id -> OJVM patch ID
+   patch_acfs_id: -> ACFS patch ID
+   patch_dbwlm_id: -> DBWLM path ID
+   patch_dir: -> patch directory (directory where patch file is extracted)
+   file: -> patch file name (not used currently)
+   only_oh: -> whether the patch is for OH binaries only
+   desc: -> patch description (usually should contain the patch name)
+--

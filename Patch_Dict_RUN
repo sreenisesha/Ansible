@@ -1,0 +1,12 @@
+28822489:
+    patch_proactive_bp_id:
+    patch_gi_id:
+    patch_db_id: 28822489
+    patch_ocw_id:
+    patch_ojvm_id:
+    patch_acfs_id:
+    patch_dbwlm_id:
+    patch_dir: 28822489
+    file: p28822489_180000_Linux-x86-64.zip
+    only_oh: False
+    desc: "Database Release Update 18.5.0"

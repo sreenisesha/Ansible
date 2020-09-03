@@ -1,0 +1,42 @@
+[ansible@ansible-control ansible-orapatch]$ ansible-playbook orapatch.yml -k
+SSH password:
+-->[Applicable if you patch Grid Infrastructure]<--
+Enter root password (press enter to skip):
+Enter root password again (press enter to skip):
+PLAY [Patch oracle software] **********************************************************************************************************************************************************************************************************
+TASK [Gathering Facts] ****************************************************************************************************************************************************************************************************************
+ok: [ora18c]
+TASK [assert] *************************************************************************************************************************************************************************************************************************
+ok: [ora18c] => {
+"changed": false,
+"msg": "All assertions passed"
+}
+TASK [orapatch : [SYSTEM] Include vars] ***********************************************************************************************************************************************************************************************
+ok: [ora18c]
+TASK [orapatch : [SYSTEM] Push sql scripts] *******************************************************************************************************************************************************************************************
+ok: [ora18c]
+TASK [orapatch : [SYSTEM] Ensure 'orapatch' log file exists] **************************************************************************************************************************************************************************
+ok: [ora18c]
+TASK [orapatch : [SYSTEM] Start logger session] ***************************************************************************************************************************************************************************************
+ok: [ora18c]
+TASK [orapatch : Backup oracle home] **************************************************************************************************************************************************************************************************
+skipping: [ora18c] => (item=[0, {u'patch_db_list': u'', u'skip': False, u'run_only_checks': None, u'patch_id': 28822489, u'oracle_home_path': u'/u01/app/oracle/18.3.0.0/db1-base', u'patch_db_all': True, u'debug': False, u'oracle_owner': u'oracle', u'patch_ojvm': True, u'patch_only_oh': False, u'host': None, u'oratab_file': None, u'backup_oh': False}])
+TASK [orapatch : Check OPatch minimum version] ****************************************************************************************************************************************************************************************
+ok: [ora18c] => (item={u'patch_db_list': u'', u'skip': False, u'run_only_checks': None, u'patch_id': 28822489, u'oracle_home_path': u'/u01/app/oracle/18.3.0.0/db1-base', u'patch_db_all': True, u'debug': False, u'oracle_owner': u'oracle', u'patch_ojvm': True, u'patch_only_oh': False, u'host': None, u'oratab_file': None, u'backup_oh': False})
+[WARNING]: Module did not set no_log for root_password
+TASK [orapatch : Check conflicts against OH] ******************************************************************************************************************************************************************************************
+ok: [ora18c] => (item={u'patch_db_list': u'', u'skip': False, u'run_only_checks': None, u'patch_id': 28822489, u'oracle_home_path': u'/u01/app/oracle/18.3.0.0/db1-base', u'patch_db_all': True, u'debug': False, u'oracle_owner': u'oracle', u'patch_ojvm': True, u'patch_only_oh': False, u'host': None, u'oratab_file': None, u'backup_oh': False})
+TASK [orapatch : Patch OH] ************************************************************************************************************************************************************************************************************
+ok: [ora18c] => (item={u'patch_db_list': u'', u'skip': False, u'run_only_checks': None, u'patch_id': 28822489, u'oracle_home_path': u'/u01/app/oracle/18.3.0.0/db1-base', u'patch_db_all': True, u'debug': False, u'oracle_owner': u'oracle', u'patch_ojvm': True, u'patch_only_oh': False, u'host': None, u'oratab_file': None, u'backup_oh': False})
+TASK [orapatch : Patch DB] ************************************************************************************************************************************************************************************************************
+ok: [ora18c] => (item={u'patch_db_list': u'', u'skip': False, u'run_only_checks': None, u'patch_id': 28822489, u'oracle_home_path': u'/u01/app/oracle/18.3.0.0/db1-base', u'patch_db_all': True, u'debug': False, u'oracle_owner': u'oracle', u'patch_ojvm': True, u'patch_only_oh': False, u'host': None, u'oratab_file': None, u'backup_oh': False})
+TASK [orapatch : Patch OH OJVM] *******************************************************************************************************************************************************************************************************
+ok: [ora18c] => (item={u'patch_db_list': u'', u'skip': False, u'run_only_checks': None, u'patch_id': 28822489, u'oracle_home_path': u'/u01/app/oracle/18.3.0.0/db1-base', u'patch_db_all': True, u'debug': False, u'oracle_owner': u'oracle', u'patch_ojvm': True, u'patch_only_oh': False, u'host': None, u'oratab_file': None, u'backup_oh': False})
+TASK [orapatch : Patch DB OJVM] *******************************************************************************************************************************************************************************************************
+ok: [ora18c] => (item={u'patch_db_list': u'', u'skip': False, u'run_only_checks': None, u'patch_id': 28822489, u'oracle_home_path': u'/u01/app/oracle/18.3.0.0/db1-base', u'patch_db_all': True, u'debug': False, u'oracle_owner': u'oracle', u'patch_ojvm': True, u'patch_only_oh': False, u'host': None, u'oratab_file': None, u'backup_oh': False})
+TASK [orapatch : [SYSTEM] End logger session] *****************************************************************************************************************************************************************************************
+ok: [ora18c]
+TASK [orapatch : [SYSTEM] Fetch orapatch logfile] *************************************************************************************************************************************************************************************
+changed: [ora18c]
+PLAY RECAP ****************************************************************************************************************************************************************************************************************************
+ora18c : ok=14 changed=1 unreachable=0 failed=0

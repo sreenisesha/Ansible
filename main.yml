@@ -1,0 +1,19 @@
+--
+#
+# List of oracle homes and databases to patch.
+#
+ora_home_list:
+  - oracle_owner: -> OS owner of the oracle binaries
+    oracle_home_path: -> OH OS path
+    oratab_file: -> Absolute path for oratab file. This can be ignored if the global value is set.
+    run_only_checks: -> Indicator whether to run onl prereq checks against OH
+    patch_id: -> Patch ID of the patch which is to be applied. This module needs to find a match in "vars/patch_dictionary/patch_dict.yml"
+    patch_only_oh: -> Indicator whether to patch only OH without the databases (True/False)
+    patch_ojvm: -> Indicator whether to apply OJVM patch (applicable if the patch is COMBO) (True/False)
+    patch_db_all: -> Indicator whether to apply the patch on all databases after patching the OH ("patch_only_oh" has precedence over "patch_db_all") (True/False)
+    patch_db_list: "" -> Comma separated list (in quotes!) of specific databases to patch ("patch_db_all" has precedence over "patch_db_list")
+    host: -> It allows the user to specify a mapping to specific host for which this list entry is valid. It's applicable only if the playbook is executed against group of hosts
+    backup_oh: -> Indicator whether to backup oracle home binaries (True/False)
+    skip: -> Main indicator whether to skip this item list or not
+    debug: -> Enables debug mode (True/False)
+--
